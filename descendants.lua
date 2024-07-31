@@ -2,7 +2,7 @@ local descendant = {}
 
 local connections = {}
 
-workspace.DescendantAdded:Connect(function(descendant)
+local one = workspace.DescendantAdded:Connect(function(descendant)
     for i,v in pairs(connections) do
         if descendant.Name == v[2] and descendant.Parent == v[1] then pcall(v[3], descendant) end
     end
@@ -19,6 +19,10 @@ function descendant.added(parent, child, callback)
         end
     }
     return connection
+end
+
+function descendant.dis()
+    one:Disconnect()
 end
 
 return descendant
