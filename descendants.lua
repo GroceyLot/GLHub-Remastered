@@ -4,7 +4,9 @@ local connections = {}
 
 local one = workspace.DescendantAdded:Connect(function(descendant)
     for i,v in pairs(connections) do
-        if descendant.Name == v[2] and descendant.Parent == v[1] then pcall(v[3], descendant) end
+        local match = true
+        if v[2] then match = descendant.Name == v[2] end
+        if match and descendant.Parent == v[1] then pcall(v[3], descendant) end
     end
 end)
 
