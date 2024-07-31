@@ -1,6 +1,6 @@
 local ui = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local orion = loadstring(game:HttpGet(('https://github.com/GroceyLot/GLHub-Remastered/raw/Things/orion.lua')))()
-local descendant = require("GLHub.descendants")
+local descendant = loadstring(game:HttpGet(('https://github.com/GroceyLot/GLHub-Remastered/raw/Things/descendants.lua')))()
 local replicatedStorage = game.ReplicatedStorage
 local config = {
     Name = "GLHub",
